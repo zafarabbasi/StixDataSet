@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	APT: Exposing APTs
+-->
+
+<stix:STIX_Package
+	id="apt:package-e33ffe07-2f4c-48d8-b0af-ee2619d765cf"
+	version="1.2"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:marking="http://data-marking.mitre.org/Marking-1"
+	xmlns:terms="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2" 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObject="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:URIObject="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:LinkObject="http://cybox.mitre.org/objects#LinkObject-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:report="http://stix.mitre.org/Report-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2" 
+     xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:et="http://stix.mitre.org/ExploitTarget-1"
+
+
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:campaign="http://stix.mitre.org/Campaign-1"
+	xmlns:threat-actor="http://stix.mitre.org/ThreatActor-1"
+	xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1"
+	xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3"
+	xmlns:xal="urn:oasis:names:tc:ciq:xal:3" 
+	xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3"
+	xmlns:lmco="lockheedmartin.com" 
+	xmlns:apt="http://www.apt.com"
+	xmlns:mitre="http://www.mitre.org"
+	xmlns:coa="http://stix.mitre.org/CourseOfAction-1" 	
+	xmlns:ta="http://stix.mitre.org/ThreatActor-1" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:attack_pattern = "http://stix.mitre.org/extensions/AP#CAPEC2.7-1"
+
+	xsi:schemaLocation="
+		http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd
+		http://cybox.mitre.org/objects#AddressObject-2 
+		http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+		http://cybox.mitre.org/objects#URIObject-2 
+		http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd		
+		http://cybox.mitre.org/objects#LinkObject-1 
+		http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd
+		http://stix.mitre.org/Indicator-2 
+		http://stix.mitre.org/XMLSchema/indicator/2.2/indicator.xsd
+		http://stix.mitre.org/Campaign-1 
+		http://stix.mitre.org/XMLSchema/campaign/1.2/campaign.xsd
+		http://stix.mitre.org/ThreatActor-1 
+		http://stix.mitre.org/XMLSchema/threat_actor/1.2/threat_actor.xsd
+		http://stix.mitre.org/TTP-1 
+		http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+		http://stix.mitre.org/default_vocabularies-1 
+		http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
+		http://cybox.mitre.org/default_vocabularies-2 
+		http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+		http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 
+		http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.2/ciq_3.0_identity.xsd
+		http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
+		http://stix.mitre.org/Report-1 http://stix.mitre.org/XMLSchema/report/1.0/report.xsd
+		http://stix.mitre.org/Incident-1 
+	    	http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
+
+		http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 						
+		http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.1/terms_of_use_marking.xsd
+		http://stix.mitre.org/XMLSchema/extensions/attack_pattern/capec_2.7/1.0.1/capec_2.7_attack_pattern.xsd">
+
+	<stix:STIX_Header>
+
+		<stix:Handling>
+			<marking:Marking>
+				<marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+				<!-- Apply following marking to entire document -->
+				<marking:Marking_Structure xsi:type="terms:TermsOfUseMarkingStructureType">
+					<terms:Terms_Of_Use>APT1: Exposing One of China's Cyber Espionage Units (the "APT1 Report") is copyright 2013 by apt Corporation and can be downloaded at intelreport.apt.com.  This XML file using the STIX standard was created by The MITRE Corporation using the content of the APT1 Report with apt's permission.  apt is not responsible for the content of this file.</terms:Terms_Of_Use>
+				</marking:Marking_Structure>
+			</marking:Marking>
+		</stix:Handling>
+
+		<stix:Information_Source>
+
+			<stixCommon:Identity>
+				<stixCommon:Name>MITRE</stixCommon:Name>
+			</stixCommon:Identity>
+
+			<stixCommon:Role xsi:type="stixVocabs:InformationSourceRoleVocab-1.0">Transformer/Translator</stixCommon:Role>
+			
+			<stixCommon:Contributing_Sources>
+				<stixCommon:Source>
+					<stixCommon:Identity>
+						<stixCommon:Name>apt</stixCommon:Name>
+					</stixCommon:Identity>
+					<stixCommon:Role xsi:type="stixVocabs:InformationSourceRoleVocab-1.0">Initial Author</stixCommon:Role>
+					<stixCommon:Time>
+						<cyboxCommon:Produced_Time precision="day">2013-02-19T00:00:00Z</cyboxCommon:Produced_Time>
+					</stixCommon:Time>
+				</stixCommon:Source>
+			</stixCommon:Contributing_Sources>
+			
+			<stixCommon:Time>
+				<cyboxCommon:Produced_Time precision="day">2014-01-16T00:00:00Z</cyboxCommon:Produced_Time>
+			</stixCommon:Time>
+			
+			<stixCommon:References>
+				<stixCommon:Reference>http://intelreport.apt.com/apt_APT1_Report.pdf</stixCommon:Reference>
+			</stixCommon:References>
+
+		</stix:Information_Source>
+
+	</stix:STIX_Header>
+
+<stix:Campaigns>
+<stix:Campaign id="apt:campaign_23" xsi:Type = "campaign:CampaignType">
+ <campaign:Title>CryptoLocker</campaign:Title>
+ <campaign:Related_TTPs>
+ <campaign:Related_TTP>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:TTP idref="apt:ttp_EncryptFiles" /> 
+</campaign:Related_TTP>
+ </campaign:Related_TTPs> 
+<campaign:Related_Incidents>
+</campaign:Related_Incidents>
+<campaign:Related_Indicators>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Encryption-AES_RSA(Key)"/>
+</campaign:Related_Indicator>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Protocol-HTTP"/>
+</campaign:Related_Indicator>
+</campaign:Related_Indicators>
+<campaign:Attribution>
+</campaign:Attribution>
+</stix:Campaign>
+<stix:Campaigns>
+<stix:Campaign id="apt:campaign_24" xsi:Type = "campaign:CampaignType">
+ <campaign:Title>CryptoWall</campaign:Title>
+ <campaign:Related_TTPs>
+ <campaign:Related_TTP>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:TTP idref="apt:ttp_EncryptFiles" /> 
+</campaign:Related_TTP>
+ </campaign:Related_TTPs> 
+<campaign:Related_Incidents>
+</campaign:Related_Incidents>
+<campaign:Related_Indicators>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Encryption-AES_RSA(Key)"/>
+</campaign:Related_Indicator>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Protocol-HTTP"/>
+</campaign:Related_Indicator>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Protocol-TOR"/>
+</campaign:Related_Indicator>
+</campaign:Related_Indicators>
+<campaign:Attribution>
+</campaign:Attribution>
+</stix:Campaign>
+<stix:Campaigns>
+<stix:Campaign id="apt:campaign_25" xsi:Type = "campaign:CampaignType">
+ <campaign:Title>TorrentLocker</campaign:Title>
+ <campaign:Related_TTPs>
+ <campaign:Related_TTP>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:TTP idref="apt:ttp_EncryptFiles" /> 
+</campaign:Related_TTP>
+ </campaign:Related_TTPs> 
+<campaign:Related_Incidents>
+</campaign:Related_Incidents>
+<campaign:Related_Indicators>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Encryption-AES_StreamCipher"/>
+</campaign:Related_Indicator>
+<campaign:Related_Indicator>
+<stixCommon:Relationship> Uses Malware</stixCommon:Relationship>
+<stixCommon:Indicator idref="apt:indicator_Protocol-HTTPS"/>
+</campaign:Related_Indicator>
+</campaign:Related_Indicators>
+<campaign:Attribution>
+</campaign:Attribution>
+</stix:Campaign>
+ </stix:Campaigns>
+<stix:TTPs>
+<stix:TTP id="apt:ttp_EncryptFiles" xsi:Type ="ttp:TTPType">
+<ttp:Title>EncryptFiles</ttp:Title>
+</stix:TTP>
+/<stix:TTPs>
+<stix:Incidents>
+</stix:Incidents>
+<stix:Indicators>
+<stix:Indicator id="apt:indicator_Encryption-AES_RSA(Key)" xsi:Type = "indicator:IndicatorType" >
+<indicator:Title>Encryption-AES_RSA(Key)</indicator:Title> 
+<indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0"> </indicator:Type>
+</stix:Indicator>
+<stix:Indicator id="apt:indicator_Protocol-HTTP" xsi:Type = "indicator:IndicatorType" >
+<indicator:Title>Protocol-HTTP</indicator:Title> 
+<indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0"> </indicator:Type>
+</stix:Indicator>
+<stix:Indicator id="apt:indicator_Protocol-TOR" xsi:Type = "indicator:IndicatorType" >
+<indicator:Title>Protocol-TOR</indicator:Title> 
+<indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0"> </indicator:Type>
+</stix:Indicator>
+<stix:Indicator id="apt:indicator_Encryption-AES_StreamCipher" xsi:Type = "indicator:IndicatorType" >
+<indicator:Title>Encryption-AES_StreamCipher</indicator:Title> 
+<indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0"> </indicator:Type>
+</stix:Indicator>
+<stix:Indicator id="apt:indicator_Protocol-HTTPS" xsi:Type = "indicator:IndicatorType" >
+<indicator:Title>Protocol-HTTPS</indicator:Title> 
+<indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0"> </indicator:Type>
+</stix:Indicator>
+</stix:Indicators>
+<stix:Threat_Actors>
+</stix:Threat_Actors>
+<stix:Exploit_Targets>
+</stix:Exploit_Targets>
+</stix:STIX_Package>
+'   Alhamdulillah
